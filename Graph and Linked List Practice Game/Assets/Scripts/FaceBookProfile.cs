@@ -24,7 +24,7 @@ public class FaceBookProfile : MonoBehaviour
 
     public Text ListOfFriends;
 
-
+    public string tempstringholder = null;
 
 
 
@@ -44,7 +44,7 @@ public class FaceBookProfile : MonoBehaviour
     #region Fields
 
         FaceBookProfile value;
-        List<FaceBookProfile> FriendsList;
+        public List<FaceBookProfile> FriendsList;
         //List<int> weights;
 
         #endregion
@@ -159,14 +159,37 @@ public class FaceBookProfile : MonoBehaviour
 
         theName = inputField.GetComponent<Text>().text;
         newFriend = FaceBookGraph.FindProfile(theName);
+
         
+
         if(newFriend != null)
         {
             Results = FaceBookGraph.AddEdge(this, newFriend);
             if (Results == true)
             {
                 textDisplay.GetComponent<Text>().text = theName + ": Was added as your friend";
-                ListOfFriends.GetComponent<Text>().text = theName + " Is your friend";
+
+
+                //for(int i = 0; i < (FriendsList.Count - 1); i++ )
+                foreach(FaceBookProfile Friend in FriendsList)
+                {
+                    if(tempstringholder == null)
+                    {
+                        tempstringholder = theName;
+                        ListOfFriends.GetComponent<Text>().text = theName + " Is your friend";
+                        Debug.Log("First Friend added is " + tempstringholder);
+                    }
+                    else
+                    {
+                        tempstringholder = tempstringholder + ", " + theName ;
+                        Debug.Log("Added More Friends " + tempstringholder);
+                        ListOfFriends.GetComponent<Text>().text = tempstringholder + " Are your friend";
+                        
+                    }
+
+                    
+                }
+                
             }
             else if (Results == false)
             {
