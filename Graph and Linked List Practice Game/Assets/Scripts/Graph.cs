@@ -6,14 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEditor.U2D.Common;
+using UnityEngine.UI;
 
 namespace GraphSearching
 {
     //This is the graph class
-    class Graph : MonoBehaviour
+    public class Graph : MonoBehaviour
     {
 
         public List<FaceBookProfile> nodes = new List<FaceBookProfile>();
+        public string BillySteven = "Billy Steven";
+            
 
         public Graph()
         {
@@ -68,14 +71,14 @@ namespace GraphSearching
         public bool AddEdge(FaceBookProfile value1, FaceBookProfile value2)
         {
 
-            FaceBookProfile node1 = Find(value1);
-            FaceBookProfile node2 = Find(value2);
+            FaceBookProfile node1 = FindProfile(value1.Facebookname);
+            FaceBookProfile node2 = FindProfile(value2.Facebookname);
             if (node1 == null ||
                 node2 == null)
             {
                 return false;
             }
-            else if (node1.Neighbors.Contains(node2))
+            else if (node1.AllMyCurrentFriends.Contains(node2))
             {
                 // edge already exists
                 return false;
@@ -118,7 +121,7 @@ namespace GraphSearching
             {
                 return false;
             }
-            else if (!node1.Neighbors.Contains(node2))
+            else if (!node1.AllMyCurrentFriends.Contains(node2))
             {
                 // edge doesn't exist
                 return false;
@@ -132,7 +135,8 @@ namespace GraphSearching
             }
         }
 
-
+        
+        //Find if the Facebook profile in the graph if it exist using the actually class value
         public FaceBookProfile Find(FaceBookProfile value)
         {
             foreach (FaceBookProfile node in nodes)
@@ -144,6 +148,24 @@ namespace GraphSearching
             }
             return null;
         }
+        
+
+        //Find if the Facebook profile in the graph if it exist using string value of the name
+        public FaceBookProfile FindProfile(string value)
+        {
+            foreach (FaceBookProfile node in nodes)
+            {
+                if (node.Facebookname.Equals(value))
+                {
+                    return node;
+                }
+            }
+            return null;
+        }
+
+
+
+
 
         public override String ToString()
         {

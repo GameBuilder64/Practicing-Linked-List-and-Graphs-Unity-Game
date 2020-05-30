@@ -222,18 +222,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4684172233324243497}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &864649569 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 864649569, guid: 755911912f07bfe46af281c96c67ac3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 4684172233324243497}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &890339271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -249,6 +237,26 @@ PrefabInstance:
       propertyPath: m_Text
       value: Tina Chan
       objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.019989014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.504303
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -9.8836975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -3.008646
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172233389849733, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_Sprite
@@ -259,6 +267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FaceBook Panel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233564452009, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -370,6 +383,16 @@ PrefabInstance:
       propertyPath: ListOfFriends
       value: 
       objectReference: {fileID: 1874907314}
+    - target: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: Facebookname
+      value: Tina Chan
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: FaceBookGraph
+      value: 
+      objectReference: {fileID: 1197104248}
     - target: {fileID: 4684172235003316410, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -413,6 +436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FaceBook Panel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233564452009, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -524,6 +552,16 @@ PrefabInstance:
       propertyPath: ListOfFriends
       value: 
       objectReference: {fileID: 1160979577}
+    - target: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: Facebookname
+      value: Charle Stain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: FaceBookGraph
+      value: 
+      objectReference: {fileID: 1197104248}
     - target: {fileID: 4684172235003316410, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -552,6 +590,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1160979578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1160979575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772e9409882b5704fb49c1f7887268c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1197104246
@@ -601,6 +651,8 @@ MonoBehaviour:
   - {fileID: 4684172233324243502}
   - {fileID: 812255783}
   - {fileID: 2086057074}
+  - {fileID: 1160979578}
+  BillySteven: Billy Steven
 --- !u!1 &1199542185
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +859,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FaceBook Panel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172233564452009, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,6 +974,16 @@ PrefabInstance:
       propertyPath: ListOfFriends
       value: 
       objectReference: {fileID: 2086057073}
+    - target: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: Facebookname
+      value: Jack Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: FaceBookGraph
+      value: 
+      objectReference: {fileID: 1197104248}
     - target: {fileID: 4684172235003316410, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1078,9 +1145,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233818882277, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
-      propertyPath: ListOfFriends
+      propertyPath: FaceBookGraph
       value: 
-      objectReference: {fileID: 864649569}
+      objectReference: {fileID: 1197104248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
 --- !u!114 &4684172233324243502 stripped

@@ -6,9 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UI;
+using GraphSearching;
 
+// The FacebookBook Profile Class is the the Node in the graph
+// It contains the connections and all profile information of the person
 public class FaceBookProfile : MonoBehaviour
 {
+
+    public Graph FaceBookGraph;
 
     public string theName;
     public GameObject inputField;
@@ -19,10 +24,14 @@ public class FaceBookProfile : MonoBehaviour
 
     public Text ListOfFriends;
 
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        FriendsList = new List<FaceBookProfile>();
     }
 
     // Update is called once per frame
@@ -35,23 +44,8 @@ public class FaceBookProfile : MonoBehaviour
     #region Fields
 
         FaceBookProfile value;
-        List<FaceBookProfile> neighbors;
-        List<int> weights;
-
-        #endregion
-
-        #region Constructors
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="value">value for the node</param>
-        public FaceBookProfile(FaceBookProfile value)
-        {
-            this.value = value;
-            neighbors = new List<FaceBookProfile>();
-            weights = new List<int>();
-        }
+        List<FaceBookProfile> FriendsList;
+        //List<int> weights;
 
         #endregion
 
@@ -68,9 +62,9 @@ public class FaceBookProfile : MonoBehaviour
         /// <summary>
         /// Gets a read-only list of the neighbors of the node
         /// </summary>
-        public IList<FaceBookProfile> Neighbors
+        public IList<FaceBookProfile> AllMyCurrentFriends
         {
-            get { return neighbors.AsReadOnly(); }
+            get { return FriendsList.AsReadOnly(); }
         }
 
         #endregion
@@ -86,39 +80,19 @@ public class FaceBookProfile : MonoBehaviour
         public bool AddNeighbor(FaceBookProfile neighbor)
         {
             // don't add duplicate nodes
-            if (neighbors.Contains(neighbor))
+            if (FriendsList.Contains(neighbor))
             {
                 return false;
             }
             else
             {
-                neighbors.Add(neighbor);
+                FriendsList.Add(neighbor);
                 //weights.Add(weight);
                 return true;
             }
         }
 
-        /// <summary>
-        /// Gets the weight of the edge from this node to
-        /// the given neighbor. If the edge doesn't exist,
-        /// throws an InvalidOperationException
-        /// </summary>
-        /// <param name="neighbor">neighbor</param>
-        /// <returns>weight of edge to neighbor</returns>
-        public int GetEdgeWeight(FaceBookProfile neighbor)
-        {
-            // make sure edge exists
-            if (!neighbors.Contains(neighbor))
-            {
-                return 0;
-                //throw new InvalidOperationException("Trying to retrieve weight of non-existent edge");
-            }
-            else
-            {
-                int index = neighbors.IndexOf(neighbor);
-                return weights[index];
-            }
-        }
+
 
         /// <summary>
         /// Removes the given node as a neighbor for this node
@@ -128,7 +102,7 @@ public class FaceBookProfile : MonoBehaviour
         public bool RemoveNeighbor(FaceBookProfile neighbor)
         {
             // remove weight for neighbor
-            int index = neighbors.IndexOf(neighbor);
+            int index = FriendsList.IndexOf(neighbor);
             if (index == -1)
             {
                 // neighbor not in list
@@ -137,8 +111,7 @@ public class FaceBookProfile : MonoBehaviour
             else
             {
                 // remove neighbor and edge weight
-                neighbors.RemoveAt(index);
-                weights.RemoveAt(index);
+                FriendsList.RemoveAt(index);
                 return true;
             }
         }
@@ -149,11 +122,11 @@ public class FaceBookProfile : MonoBehaviour
         /// <returns>true if the neighbors were removed, false otherwise</returns>
         public bool RemoveAllNeighbors()
         {
-            for (int i = neighbors.Count - 1; i >= 0; i--)
+            for (int i = FriendsList.Count - 1; i >= 0; i--)
             {
-                neighbors.RemoveAt(i);
+                FriendsList.RemoveAt(i);
             }
-            weights.Clear();
+            
             return true;
         }
 
@@ -166,19 +139,45 @@ public class FaceBookProfile : MonoBehaviour
             StringBuilder nodeString = new StringBuilder();
             nodeString.Append("[Node Value: " + value +
                 " Neighbors: ");
-            for (int i = 0; i < neighbors.Count; i++)
+            for (int i = 0; i < FriendsList.Count; i++)
             {
-                nodeString.Append(neighbors[i].Value + " " +
-                    "(" + weights[i] + ") ");
+                nodeString.Append(FriendsList[i].Value + " " +
+                    "(" + FriendsList[i] + ") ");
             }
             nodeString.Append("]");
             return nodeString.ToString();
         }
 
+
+    // Calls this function when pressing on the add button
+    // First it searchs the entire graph to see if the facebook profile exist
+    // Then it adds it and returns true and updates the text
     public void AddFriend()
     {
+        FaceBookProfile newFriend;
+        bool Results;
+
         theName = inputField.GetComponent<Text>().text;
-        textDisplay.GetComponent<Text>().text = "Welcome " + theName + " to the game";
+        newFriend = FaceBookGraph.FindProfile(theName);
+        
+        if(newFriend != null)
+        {
+            Results = FaceBookGraph.AddEdge(this, newFriend);
+            if (Results == true)
+            {
+                textDisplay.GetComponent<Text>().text = theName + ": Was added as your friend";
+                ListOfFriends.GetComponent<Text>().text = theName + " Is your friend";
+            }
+            else if (Results == false)
+            {
+                textDisplay.GetComponent<Text>().text = theName + ": Is your friend already or does not exist";
+            }
+        }
+        else
+        {
+            textDisplay.GetComponent<Text>().text = theName + ": Does not exist";
+        }
+
     }
 
     public void RemoveFriend()
