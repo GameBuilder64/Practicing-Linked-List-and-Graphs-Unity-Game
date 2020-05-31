@@ -89,25 +89,19 @@ namespace GraphSearching
                 node1.AddNeighbor(node2);
                 node2.AddNeighbor(node1);
 
-               
-                //Loop through the friend that is added and update their friend list text to display
-                //The new friend as well
-                foreach (FaceBookProfile Friend in node2.FriendsList)
+                //foreach (FaceBookProfile Friend in node2.FriendsList)
+                //{ }
+                if (node2.tempstringholder == "")
                 {
-                    if (node2.tempstringholder == null)
-                    {
-                        node2.tempstringholder = Friend.Facebookname;
-                        node2.ListOfFriends.GetComponent<Text>().text = Friend.Facebookname + " Is your friend";
-                    }
-                    else
-                    {
-                        node2.tempstringholder = node2.tempstringholder + ", " + Friend.Facebookname;
-                        node2.ListOfFriends.GetComponent<Text>().text = node2.tempstringholder + " Are your friend";
-                    }
+                    node2.tempstringholder = node1.Facebookname;
+                    node2.ListOfFriends.GetComponent<Text>().text = node1.Facebookname + " Is your friend";
                 }
+                else
+                {
 
-
-
+                    node2.tempstringholder = node2.tempstringholder + ", " + node1.Facebookname;
+                    node2.ListOfFriends.GetComponent<Text>().text = node2.tempstringholder + " Are your friend";
+                }
                 return true;
             }
         }

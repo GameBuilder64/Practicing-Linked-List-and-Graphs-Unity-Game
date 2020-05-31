@@ -25,6 +25,7 @@ public class FaceBookProfile : MonoBehaviour
     public Text ListOfFriends;
 
     public string tempstringholder = null;
+    public string tempstringholder2 = null;
 
 
 
@@ -169,26 +170,21 @@ public class FaceBookProfile : MonoBehaviour
             {
                 textDisplay.GetComponent<Text>().text = theName + ": Was added as your friend";
 
-
-                //for(int i = 0; i < (FriendsList.Count - 1); i++ )
-                foreach(FaceBookProfile Friend in FriendsList)
+                //foreach(FaceBookProfile Friend in FriendsList)
+                //{ }
+                if (tempstringholder == "")
                 {
-                    if(tempstringholder == null)
-                    {
-                        tempstringholder = theName;
-                        ListOfFriends.GetComponent<Text>().text = theName + " Is your friend";
-                        Debug.Log("First Friend added is " + tempstringholder);
-                    }
-                    else
-                    {
-                        tempstringholder = tempstringholder + ", " + theName ;
-                        Debug.Log("Added More Friends " + tempstringholder);
-                        ListOfFriends.GetComponent<Text>().text = tempstringholder + " Are your friend";
-                        
-                    }
-
-                    
+                    tempstringholder = theName;
+                    ListOfFriends.GetComponent<Text>().text = theName + " Is your friend";
                 }
+                else
+                {
+                    tempstringholder = tempstringholder + ", " + theName ;
+                    ListOfFriends.GetComponent<Text>().text = tempstringholder + " Are your friend";
+                        
+                }
+
+                
                 
             }
             else if (Results == false)
@@ -205,10 +201,85 @@ public class FaceBookProfile : MonoBehaviour
 
     public void RemoveFriend()
     {
+        FaceBookProfile removefriend;
+        bool Results;
+
         theName = inputField.GetComponent<Text>().text;
-        textDisplay.GetComponent<Text>().text = "Welcome " + theName + " to the game";
+
+        AreYouFriends(theName);
+
+
+
     }
 
-    #endregion
+    // Finds the friend and loops around your entire friend lists to remove that friend then loops around to update your
+    // Display friends text list
+    // Also loops that friends and remove your as their friend and loops teir friend list text to correctly display
+    public bool AreYouFriends(string IsThisYourFriend)
+    {
+        foreach (FaceBookProfile Friend in FriendsList)
+        {
+            if (Friend.Facebookname.Equals(IsThisYourFriend))
+            {
+                textDisplay.GetComponent<Text>().text = IsThisYourFriend + ": Was removed as your friend";
 
+                // Removes you from that person list and then loops to update their friends list text and friends list
+                Friend.FriendsList.Remove(this);
+                Friend.tempstringholder = "";
+
+                if (Friend.FriendsList.Count > 0)
+                {
+                    // Loops through the other persons friends list 
+                    foreach (FaceBookProfile OtherPersonsRemainingFriend in Friend.FriendsList)
+                    {
+                        if (Friend.tempstringholder == "")
+                        {
+                            Friend.tempstringholder = OtherPersonsRemainingFriend.Facebookname;
+                            Friend.ListOfFriends.GetComponent<Text>().text = Friend.tempstringholder + " Is your friend";
+                        }
+                        else if (OtherPersonsRemainingFriend.Facebookname != "" || OtherPersonsRemainingFriend.theName != null)
+                        {
+                            Friend.tempstringholder = Friend.tempstringholder + ", " + OtherPersonsRemainingFriend.Facebookname;
+                            Friend.ListOfFriends.GetComponent<Text>().text = Friend.tempstringholder + " Are your friend";
+                        }
+                    }
+                }
+                if (Friend.FriendsList.Count == 0)
+                {
+                    Friend.ListOfFriends.GetComponent<Text>().text = "You Current Have No Friends";
+                }
+
+                // Remove this friend your edges and neightbors 
+                FriendsList.Remove(Friend);
+                tempstringholder = "";
+
+                if(FriendsList.Count > 0)
+                {
+                    foreach (FaceBookProfile RemainingFriend in FriendsList)
+                    {
+                        if (tempstringholder == "")
+                        {
+                            tempstringholder = RemainingFriend.Facebookname;
+                            ListOfFriends.GetComponent<Text>().text = tempstringholder + " Is your friend";
+
+                        }
+                        else if (RemainingFriend.Facebookname != "" || RemainingFriend.theName != null)
+                        {
+                            tempstringholder = tempstringholder + ", " + RemainingFriend.Facebookname;
+                            ListOfFriends.GetComponent<Text>().text = tempstringholder + " Are your friend";
+
+                        }
+                    }
+                }
+                if(FriendsList.Count == 0)
+                {
+                    ListOfFriends.GetComponent<Text>().text = "You Current Have No Friends";
+                }
+                return true;
+            }
+        }
+        textDisplay.GetComponent<Text>().text = theName + ": Does not exist";
+        return false;
+    }
+    #endregion
 }

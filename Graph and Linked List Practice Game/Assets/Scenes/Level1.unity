@@ -266,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_Name
-      value: FaceBook Panel (1)
+      value: Tina Chan Profile
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -393,6 +393,16 @@ PrefabInstance:
       propertyPath: FaceBookGraph
       value: 
       objectReference: {fileID: 1197104248}
+    - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 812255783}
+    - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveFriend
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172235003316410, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -435,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_Name
-      value: FaceBook Panel (3)
+      value: Charle Stain Profile
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -562,6 +572,16 @@ PrefabInstance:
       propertyPath: FaceBookGraph
       value: 
       objectReference: {fileID: 1197104248}
+    - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1160979578}
+    - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveFriend
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172235003316410, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -857,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_Name
-      value: FaceBook Panel (2)
+      value: Jack Star Profile
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -984,6 +1004,16 @@ PrefabInstance:
       propertyPath: FaceBookGraph
       value: 
       objectReference: {fileID: 1197104248}
+    - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2086057074}
+    - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveFriend
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172235003316410, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.y

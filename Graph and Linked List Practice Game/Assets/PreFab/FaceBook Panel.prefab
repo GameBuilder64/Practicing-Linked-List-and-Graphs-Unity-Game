@@ -631,6 +631,9 @@ MonoBehaviour:
   textDisplay: {fileID: 4684172234213534022}
   Facebookname: Billy Steven
   ListOfFriends: {fileID: 864649569}
+  tempstringholder: 
+  tempstringholder2: 
+  FriendsList: []
 --- !u!1 &4684172233989119932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,8 +1121,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4684172233818882274}
-        m_MethodName: StoreName
+      - m_Target: {fileID: 4684172233818882277}
+        m_MethodName: RemoveFriend
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
