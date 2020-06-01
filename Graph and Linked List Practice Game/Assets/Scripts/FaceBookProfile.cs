@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using GraphSearching;
+using UnityEngine.Analytics;
 
 // The FacebookBook Profile Class is the the Node in the graph
 // It contains the connections and all profile information of the person
@@ -29,10 +30,22 @@ public class FaceBookProfile : MonoBehaviour
 
 
 
+    public string FindThisPerson;
+
+    //This will be the linkedList
+    public List<FaceBookProfile> searchListpath;
+
+    public List<FaceBookProfile> AlreadySearch;
+
+    public List<List<FaceBookProfile>> PathSaving;
+
     // Start is called before the first frame update
     void Start()
     {
         FriendsList = new List<FaceBookProfile>();
+        searchListpath = new List<FaceBookProfile>();
+        AlreadySearch = new List<FaceBookProfile>();
+        PathSaving = new List<List<FaceBookProfile>>();
     }
 
     // Update is called once per frame
@@ -281,5 +294,96 @@ public class FaceBookProfile : MonoBehaviour
         textDisplay.GetComponent<Text>().text = theName + ": Does not exist";
         return false;
     }
+
+
+    public void MutualFriendFind()
+    {
+        FaceBookProfile removefriend;
+        bool Results;
+
+        theName = inputField.GetComponent<Text>().text;
+
+        if (this.Facebookname == theName)
+        {
+            textDisplay.GetComponent<Text>().text = "You Talking About Yourself";
+        }
+        else
+        {
+            SearchForMutualFriend(theName);
+            foreach (List<FaceBookProfile> PathFound in PathSaving)
+            {
+
+
+
+                foreach (FaceBookProfile ElementInPathFound in PathFound)
+                {
+                    tempstringholder2 = tempstringholder2 + "--->" + ElementInPathFound.Facebookname;
+                    textDisplay.GetComponent<Text>().text = tempstringholder2;
+                }
+            }
+        }
+
+        AlreadySearch.Clear();
+    }
+    
+    public void SearchForMutualFriend(string FindthisFriend)
+    {
+
+        FindThisPerson = FindthisFriend;
+        searchListpath.Add(this);
+        if (AlreadySearch.Contains(this) == false)
+        {
+            AlreadySearch.Add(this);
+        }
+
+        foreach (FaceBookProfile Friend in this.FriendsList)
+        {
+            if (AlreadySearch.Contains(Friend))
+            {
+                continue;
+            }
+            if (Friend.Facebookname.Equals(FindThisPerson))
+            {
+                searchListpath.Add(Friend);
+                PathSaving.Add(searchListpath);
+                searchListpath.Clear();
+            }
+            else
+            {
+                searchListpath.Add(Friend);
+                LoopThroughFriendsList(Friend);
+            }
+        }
+    }
+
+
+    public void LoopThroughFriendsList(FaceBookProfile CheckThisFriend)
+    {
+        if (AlreadySearch.Contains(CheckThisFriend) == false)
+        {
+            AlreadySearch.Add(CheckThisFriend);
+        }
+
+        foreach (FaceBookProfile ThisFriend in CheckThisFriend.FriendsList)
+        {
+            if (AlreadySearch.Contains(ThisFriend) == true)
+            {
+                continue;
+            }
+            if (ThisFriend.Facebookname.Equals(FindThisPerson))
+            {
+                searchListpath.Add(ThisFriend);
+                PathSaving.Add(searchListpath);
+                searchListpath.Clear();
+                searchListpath.Add(this);
+            }
+            else
+            {
+                searchListpath.Add(ThisFriend);
+                LoopThroughFriendsList(ThisFriend);
+            }
+        }
+    }
+
     #endregion
 }

@@ -229,6 +229,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2020773145}
     m_Modifications:
+    - target: {fileID: 845360918, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 82.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 845360918, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114.27
+      objectReference: {fileID: 0}
     - target: {fileID: 1163594828, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
       propertyPath: m_Name
       value: Tina Chan
@@ -240,12 +248,12 @@ PrefabInstance:
     - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.019989014
+      value: 0.020019531
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.504303
+      value: -1.5042725
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -393,6 +401,16 @@ PrefabInstance:
       propertyPath: FaceBookGraph
       value: 
       objectReference: {fileID: 1197104248}
+    - target: {fileID: 4684172234558664843, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.9000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172234558664843, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114.27002
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -428,6 +446,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2020773145}
     m_Modifications:
+    - target: {fileID: 845360918, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 82.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 845360918, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114.27
+      objectReference: {fileID: 0}
     - target: {fileID: 1163594828, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
       propertyPath: m_Name
       value: Charle Stain
@@ -435,6 +461,16 @@ PrefabInstance:
     - target: {fileID: 1163594830, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
       propertyPath: m_Text
       value: Charle Stain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.020019531
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.5042725
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233389849733, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -572,6 +608,16 @@ PrefabInstance:
       propertyPath: FaceBookGraph
       value: 
       objectReference: {fileID: 1197104248}
+    - target: {fileID: 4684172234558664843, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.9000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172234558664843, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114.27002
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -860,6 +906,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2020773145}
     m_Modifications:
+    - target: {fileID: 845360918, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 82.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 845360918, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114.27
+      objectReference: {fileID: 0}
     - target: {fileID: 1163594828, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
       propertyPath: m_Name
       value: Jack Star
@@ -867,6 +921,16 @@ PrefabInstance:
     - target: {fileID: 1163594830, guid: 755911912f07bfe46af281c96c67ac3f, type: 3}
       propertyPath: m_Text
       value: Jack Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.020019531
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233132699872, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.5042725
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233389849733, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
@@ -1004,6 +1068,16 @@ PrefabInstance:
       propertyPath: FaceBookGraph
       value: 
       objectReference: {fileID: 1197104248}
+    - target: {fileID: 4684172234558664843, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.9000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172234558664843, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114.27002
+      objectReference: {fileID: 0}
     - target: {fileID: 4684172234759352452, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1067,6 +1141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FaceBook Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684172233564451926, guid: 755911912f07bfe46af281c96c67ac3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684172233564452009, guid: 755911912f07bfe46af281c96c67ac3f,
         type: 3}
