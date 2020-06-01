@@ -31,7 +31,8 @@ public class ReadMe : MonoBehaviour
     // It will go to that persons nodes list and also diconnect the node and the edge is removed or vertices 
     // It will update the friends list text on both the profile you on and the profile that the person is on too
 
-
+    // Search
+    // Type the friend you want to find and it will generate a path if there is one to that person
 
 }
 
